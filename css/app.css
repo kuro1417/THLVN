@@ -1,0 +1,14 @@
+.all a{
+    padding-right: 20px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.Head-right{
+    margin-top: 14px;
+    margin-left: auto;
+}
+
+.form-search input,button{
+    border-radius: 10px;
+}
