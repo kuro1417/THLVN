@@ -1,3 +1,6 @@
+.header,.footer{
+    background-color: black;
+}
 .all a{
     padding-right: 20px;
     text-decoration: none;
@@ -9,6 +12,33 @@
     margin-left: auto;
 }
 
+.search{
+    background-color: black;
+    color: white;
+}
+
 .form-search input,button{
     border-radius: 10px;
 }
+body{
+    background-color: #343a40;
+}
+
+.list-group-item{
+    background-color: transparent;
+    border: none;
+}
+
+.list-group-item a{
+    color: white;
+    text-decoration: none;
+}
+
+.list-group-item ion-icon {
+    margin-right: 5px;
+}
+
+#home-slide .carousel-indicators li{
+    background-color: #ff00ff;
+}
+/* end Trang chủ */
