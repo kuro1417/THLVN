@@ -19,6 +19,10 @@ body{
     position: relative;
 }
 
+a{
+    text-decoration: none;
+}
+
 .form-group{
     display: flex;
     border-bottom:1px solid #fff ;

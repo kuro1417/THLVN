@@ -18,14 +18,14 @@
     <div class="wrapper text-white">
         <div class="header mb-1">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 px-0 d-flex">
+                <div class="row no-gutters">
+                    <div class="col-md-12 d-flex">
                         <div class="Head-Left">
                             <div class="all">
                                 <a href="">
                                     <img src="./image/logo.png" style="width: 70px;" alt="">
                                 </a>
-                                <a href="">Trang Chủ</a>
+                                <ion-icon name="home-outline"></ion-icon><a href="">Trang Chủ</a>
                                 <a href="">Liên hệ</a>
                             </div>
                         </div>
@@ -161,7 +161,7 @@
                                         <ion-icon name="game-controller-outline"></ion-icon><a href="">Board</a>
                                     </li>
                                     <li class="col-md-6 list-group-item">
-                                        <ion-icon name="logo-flickr"></ion-icon><a href="">Tâm lý</a>
+                                        <ion-icon name="happy-outline"></ion-icon><a href="">Tâm lý</a>
                                     </li>
                                     <li class="col-md-6 list-group-item">
                                         <ion-icon name="car-sport-outline"></ion-icon><a href="">Đua Xe</a>

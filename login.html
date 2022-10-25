@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/L&R.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="./js/jquery-3.6.1.js"></script>
     <title>Login</title>
@@ -19,13 +19,13 @@
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" class="form-input" name="UserName" id="PassWord" placeholder="Tài khoản">
+                <input type="text" class="form-input" name="UserName" id="UserName" placeholder="Tài khoản">
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" class="form-input" name="PassWord" id="PassWord" placeholder="Mật Khẩu">
                 <div class="eye">
-                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-eye toggle"></i>
                 </div>
             </div>
             <input type="checkbox">Nhớ mật Khẩu
@@ -35,15 +35,26 @@
 
             <div class="orther">
                 <button class="out">Thoát</button>
-                <button class="register">Đăng ký</button>
+                <button class="register"><a href="./DangKy.html">Đăng kí</a></button>
             </div>
         </form>
     </div>
 
     <script>
-        $(document).ready(function(){
-            $('.eye').click(function(){
+        $(document).ready(function () {
+            $('.eye').click(function () {
                 $(this).children('i').toggleClass('fa-eye-slash fa-eye');
+            });
+
+            const togglePass = document.querySelector('.toggle')
+            togglePass.addEventListener("click", function () {
+                const input = this.parentNode.previousElementSibling;
+                const inputType = input.getAttribute("type");
+                if(inputType === "password"){
+                    input.setAttribute("type","text");
+                }else{
+                    input.setAttribute("type","password");
+                }
             });
         });
     </script>
