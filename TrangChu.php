@@ -1,3 +1,6 @@
+<?php 
+    require('witget/header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,33 +17,6 @@
 </head>
 
 <body>
-
-    <div class="wrapper text-white">
-        <div class="header mb-1">
-            <div class="container">
-                <div class="row no-gutters">
-                    <div class="col-md-12 d-flex">
-                        <div class="Head-Left">
-                            <div class="all">
-                                <a href="">
-                                    <img src="./image/logo.png" style="width: 70px;" alt="">
-                                </a>
-                                <ion-icon name="home-outline"></ion-icon><a href="">Trang Chủ</a>
-                                <a href="">Liên hệ</a>
-                            </div>
-                        </div>
-
-                        <div class="Head-right">
-                            <div class="all">
-                                <a href="" class="profile">Profile</a>
-                                <a href="" class="Login">Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="wp-content">
             <div class="container">
                 <div class="row text-white">
@@ -173,32 +149,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="footer mt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h5>Thực hành Làm Việc Nhóm</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam porro dolores officiis vero
-                            dolorem ipsam. Illum, aut magnam assumenda nobis obcaecati minima quia explicabo culpa
-                            eligendi ut hic nihil dolorem odio ratione aperiam tenetur, earum vel. Cum porro, eveniet
-                            minus aperiam laborum aliquid ratione neque! Tempore, dolorum, perferendis id repudiandae
-                            nemo molestiae voluptas quasi iste aliquam reiciendis quisquam quos soluta sint nesciunt.
-                            Asperiores impedit ducimus sint dolore omnis, recusandae praesentium autem voluptates animi
-                            earum, repellendus, accusantium rerum. Pariatur saepe rerum quasi error beatae,
-                            necessitatibus perspiciatis animi vel voluptatem eum consequatur cum architecto veritatis ab
-                            et corporis quibusdam voluptatum assumenda laboriosam.</p>
-                    </div>
-                    <div class="col-md-4 mt-2">
-                        © 2022, Inc. All rights reserved. Epic, Epic Games, the Epic Games logo, Fortnite,
-                        the Fortnite logo, Unreal, Unreal Engine, the Unreal Engine logo, Unreal Tournament, and the
-                        Unreal Tournament logo are trademarks or registered trademarks of Epic Games, Inc. in the United
-                        States of America and elsewhere. Other brands or product names are the trademarks of their
-                        respective owners. Non-US transactions through Epic Games International, S.à r.l.
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     </div>
     </div>
@@ -219,4 +169,7 @@
         crossorigin="anonymous"></script>
 </body>
 
+<?php 
+    require('witget/footer.php');
+?>
 </html>
