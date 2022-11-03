@@ -20,10 +20,13 @@
         <div class="wp-content">
             <div class="container">
                 <div class="row text-white">
-                    <div class="col-md-12">
+                <div class="col-md-12 d-flex">
                         <form action="" class="form-search my-3">
                             <input class="search" type="text" name="" id="" placeholder="Search">
                         </form>
+                        <div class="cart ml-auto mt-3">
+                            <button class="btn btn-success"><a href="" class="text-white text-decoration-none"><i class="fa-solid fa-cart-shopping"></i>Giỏ Hàng</a></button>
+                        </div>
                     </div>
                     <div class="content col-md-9">
                         <!-- end search -->
@@ -37,20 +40,20 @@
                             <!-- end carousel-indicators -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="https://cdn.tgdd.vn//GameApp/-1//thumbsinarcane-800x450.png" alt=""
-                                        class="d-block w-100">
+                                    <a href=""><img src="https://cdn.tgdd.vn//GameApp/-1//thumbsinarcane-800x450.png" alt=""
+                                        class="d-block w-100"></a>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://cdn.oneesports.vn/cdn-data/sites/4/2022/08/anime-cyberpunk-edgerunner.jpg"
-                                        alt="" class="d-block w-100">
+                                    <a href=""><img src="https://cdn.oneesports.vn/cdn-data/sites/4/2022/08/anime-cyberpunk-edgerunner.jpg"
+                                        alt="" class="d-block w-100"></a>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://stevivor.com/wp-content/uploads/2022/02/elden-ring.jpg" alt=""
-                                        class="d-block w-100">
+                                    <a href=""><img src="https://stevivor.com/wp-content/uploads/2022/02/elden-ring.jpg" alt=""
+                                        class="d-block w-100"></a>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://technews.com.vn/wp-content/uploads/2022/03/the-witcher-new.jpg"
-                                        alt="" class="d-block w-100">
+                                    <a href=""><img src="https://technews.com.vn/wp-content/uploads/2022/03/the-witcher-new.jpg"
+                                        alt="" class="d-block w-100"></a>
                                 </div>
                             </div>
                             <!-- end carousel-inner -->
@@ -98,7 +101,7 @@
                                         <ion-icon name="logo-flickr"></ion-icon><a href="">Kinh dị</a>
                                     </li>
                                     <li class="col-md-6 list-group-item">
-                                        <ion-icon name="hammer-outline"></ion-icon><a href="">Hành Động</a>
+                                        <ion-icon name="skull-outline"></ion-icon><a href="">Hành Động</a>
                                     </li>
                                     <li class="col-md-6 list-group-item">
                                         <ion-icon name="hourglass-outline"></ion-icon><a href="">chiến thuật</a>
@@ -119,7 +122,7 @@
                                         <ion-icon name="extension-puzzle-outline"></ion-icon><a href="">Giải đố</a>
                                     </li>
                                     <li class="col-md-6 list-group-item">
-                                        <ion-icon name="skull-outline"></ion-icon><a href="">FPS</a>
+                                    <i class="fa-solid fa-gun"></i> <a href="">FPS</a>
                                     </li>
                                     <li class="col-md-6 list-group-item">
                                         <ion-icon name="id-card-outline"></ion-icon><a href="">Thẻ Bài</a>

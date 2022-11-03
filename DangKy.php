@@ -1,3 +1,56 @@
+<?php 
+    require('Config.php');
+    if(!isset($_POST['btn-res'])){
+        $error = array();
+        if(isset($_POST['username'])){
+            $userName = $_POST['username'];
+        }
+        if(isset($_POST['password'])){
+            $password = $_POST['password'];
+        }
+
+        if(isset($_POST['rePassword'])){
+            $rePass = $_POST['rePassword'];
+        }
+
+        if(isset($_POST['gmail'])){
+            $gmail = $_POST['gmail'];
+        }
+
+        if($userName == null){
+            $error['username'] = "Vui lòng không để trống tên đăng nhập";
+        }else
+        {
+            if($rePass == $password){
+                //kiểm tra tài khoản
+                $checkAcc = "SELECT * FROM `account` WHERE username = '".$userName."' ";
+                $resultAcc = mysqli_query(connect(),$checkAcc);
+                $numAcc = mysqli_num_rows($resultAcc);
+                if($numAcc > 0){
+                    $error['account'] = "Tên Đăng Nhập đã tồn tại";
+                }else{
+                    //check mail
+                    $checkMail = "SELECT * FROM `account` WHERE email = '".$gmail."' ";
+                    $resultMail = mysqli_query(connect(),$checkMail);
+                    $numMail = mysqli_num_rows($resultMail);
+                    if(!$numMail > 0){
+                        $insert = "INSERT INTO `account`(`idTK`, `username`, `password`, `email`) VALUES ('','".$userName."','".$password."','".$gmail."')";
+                        if(mysqli_query(connect(),$insert)){
+                            header("location: login.php");
+                            }
+                        }
+                        
+                    else{
+                        $error['mail'] = "Email này đã được sử dụng";
+                    }
+                }
+            }else{
+                $error['repass']="Mật Khẩu không khớp";
+            }
+        }
+    }
+    mysqli_close(connect());
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +72,12 @@
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" class="form-input" name="UserName" id="UserName" placeholder="Nhập tài khoản">
+                <input type="text" class="form-input" name="username" id="UserName" placeholder="Nhập tài khoản" autocomplete="off">
             </div>
 
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" data-toggle="tooltip" title="Mật khẩu phải dài hơn 6 kí tự" class="form-input" name="PassWord" id="PassWord" placeholder="Nhập mật Khẩu" >
+                <input type="password" data-toggle="tooltip" title="Mật khẩu phải dài hơn 6 kí tự" class="form-input" name="password" id="PassWord" placeholder="Nhập mật Khẩu" >
                 <div class="eye">
                     <i class="fa-solid fa-eye toggle"></i>
                 </div>
@@ -41,11 +94,11 @@
 
             <div class="form-group">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="gmail" class="form-input" name="gmail" id="gmail" placeholder="Nhập gmail">
+                <input type="gmail" class="form-input" name="gmail" id="gmail" placeholder="Nhập gmail" autocomplete="off">
             </div>
             <div class="orther">
-                <button class="register">Đăng ký</button>
-                <button class="out">Thoát</button>
+                <input type="submit" class="btn-res" value="Đăng ký"></input>
+                <button class="out"><a href="login.php">Thoát </a> </button>
             </div>
         </form>
     </div>

@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <title>Header</title>
+    <title></title>
 </head>
 <body>
-        <div class="header mb-1">
+        <div class="header mb-1 text-white">
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-md-12 d-flex">
@@ -21,15 +22,15 @@
                                 <a href="">
                                     <img src="./image/logo.png" style="width: 70px;" alt="">
                                 </a>
-                                <ion-icon name="home-outline"></ion-icon><a href="">Trang Chủ</a>
-                                <a href="">Liên hệ</a>
+                                    <a href=""><i class="fa-solid fa-house icon-home"></i> Trang Chủ</a>
+                                    <a href=""><i class="fa-solid fa-phone"></i> Liên hệ</a>
                             </div>
                         </div>
 
                         <div class="Head-right">
                             <div class="all">
-                                <a href="" class="profile">Profile</a>
-                                <a href="" class="Login">Login</a>
+                                <i class="fa-solid fa-user"></i> <a href="Profile.php" class="profile">Profile</a>
+                                <i class="fa-solid fa-right-from-bracket"></i> <a href="" class="Login">Sign out</a>
                             </div>
                         </div>
                     </div>

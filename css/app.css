@@ -42,3 +42,9 @@ body{
     background-color: #ff00ff;
 }
 /* end Trang chủ */
+/* profile */
+.name,.mail
+{
+    width: 189px;
+    border-bottom: 1px solid white;
+}

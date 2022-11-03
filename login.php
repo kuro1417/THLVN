@@ -1,3 +1,26 @@
+<?php
+    require('Config.php');
+
+    if(isset($_POST)){
+        $error = array();
+        if(isset($_POST['username'])){
+            $userName = $_POST['username'];
+        }
+        if(isset($_POST['password'])){
+            $password = $_POST['password'];
+        }
+        $log = "SELECT * FROM `account` WHERE username = '".$userName."' AND password='".$password."'";
+        $resultLog = mysqli_query(connect(), $log);
+        $numLog = mysqli_num_rows($resultLog);
+
+        if($numLog > 0){
+            header("location: TrangChu.php");
+        }else{
+            $error['lg']="<p>Sai tài khoản hoặc mật khẩu</p>";
+        }
+    }
+    mysqli_close(connect());
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,23 +42,22 @@
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" class="form-input" name="UserName" id="UserName" placeholder="Tài khoản">
+                <input type="text" class="form-input" name="username" id="UserName" placeholder="Tài khoản" autocomplete="off">
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" class="form-input" name="PassWord" id="PassWord" placeholder="Mật Khẩu">
+                <input type="password" class="form-input" name="password" id="PassWord" placeholder="Mật Khẩu">
                 <div class="eye">
                     <i class="fa-solid fa-eye toggle"></i>
                 </div>
             </div>
             <input type="checkbox">Nhớ mật Khẩu
             <div class="form-submit">
-                <input type="submit" value="Đăng Nhập">
+                <input type="submit" class="btn-login" value="Đăng Nhập">
             </div>
 
             <div class="orther">
-                <button class="out">Thoát</button>
-                <button class="register"><a href="./DangKy.html">Đăng kí</a></button>
+                <button class="register"><a href="DangKy.php">Đăng kí</a></button>
             </div>
         </form>
     </div>

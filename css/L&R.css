@@ -68,9 +68,14 @@ button{
     position: relative;
 }
 
-.orther .register{
+.orther .btn-res{
     position: absolute;
     right: 0;
+    bottom: 12px;
+    border-radius: 8px;
+    width: 100px;
+    height: 31px;
+    cursor: pointer;
 }
 
 .eye{
