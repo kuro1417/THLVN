@@ -1,7 +1,7 @@
 <?php
     require('Config.php');
 
-    if(isset($_POST)){
+    if(!isset($_POST['btn-login'])){
         $error = array();
         if(isset($_POST['username'])){
             $userName = $_POST['username'];

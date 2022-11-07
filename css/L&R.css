@@ -57,6 +57,10 @@ a{
     justify-content: center;
 }
 
+.form-submit input.btn-login{
+    cursor: pointer;
+}
+
 button{
     padding: 5px;
     border-radius: 8px;

@@ -36,7 +36,7 @@
                     if(!$numMail > 0){
                         $insert = "INSERT INTO `account`(`idTK`, `username`, `password`, `email`) VALUES ('','".$userName."','".$password."','".$gmail."')";
                         if(mysqli_query(connect(),$insert)){
-                            header("location: login.php");
+                            header("location: index.php");
                             }
                         }
                         
@@ -98,7 +98,7 @@
             </div>
             <div class="orther">
                 <input type="submit" class="btn-res" value="Đăng ký"></input>
-                <button class="out"><a href="login.php">Thoát </a> </button>
+                <button class="out"><a href="index.php">Đăng nhập </a> </button>
             </div>
         </form>
     </div>
