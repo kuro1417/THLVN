@@ -1,22 +1,31 @@
 <?php
     require('Config.php');
 
-    if(!isset($_POST['btn-login'])){
+    if(isset($_POST['btn-login'])){
         $error = array();
         if(isset($_POST['username'])){
             $userName = $_POST['username'];
         }
+            
+        
+
         if(isset($_POST['password'])){
             $password = $_POST['password'];
         }
+            
+        
         $log = "SELECT * FROM `account` WHERE username = '".$userName."' AND password='".$password."'";
         $resultLog = mysqli_query(connect(), $log);
         $numLog = mysqli_num_rows($resultLog);
 
         if($numLog > 0){
             header("location: TrangChu.php");
+        }else if(empty($_POST['username'])){
+            $error['username'] = "Vui lòng không để trống tên đăng nhập";
+        }else if(empty($_POST['password'])){
+            $error['password'] = "Vui lòng không để trống mật khẩu";
         }else{
-            $error['lg']="<p>Sai tài khoản hoặc mật khẩu</p>";
+            $error['login']="Sai tài khoản hoặc mật khẩu";
         }
     }
     mysqli_close(connect());
@@ -44,6 +53,7 @@
                 <i class="fa-solid fa-user"></i>
                 <input type="text" class="form-input" name="username" id="UserName" placeholder="Tài khoản" autocomplete="off">
             </div>
+            <p class="error"> <?php if(!empty($error['username'])) echo $error['username'] ?></p>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" class="form-input" name="password" id="PassWord" placeholder="Mật Khẩu">
@@ -51,11 +61,12 @@
                     <i class="fa-solid fa-eye toggle"></i>
                 </div>
             </div>
+            <p class="error"> <?php if(!empty($error['password'])) echo $error['password'] ?></p>
             <input type="checkbox">Nhớ mật Khẩu
+            <p class="error"> <?php if(!empty($error['login'])) echo $error['login'] ?></p>
             <div class="form-submit">
-                <input type="submit" class="btn-login" value="Đăng Nhập">
+                <input type="submit" class="login" name="btn-login" value="Đăng Nhập">
             </div>
-
             <div class="orther">
                 <button class="register"><a href="DangKy.php">Đăng kí</a></button>
             </div>

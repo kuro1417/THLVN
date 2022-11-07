@@ -57,7 +57,7 @@ a{
     justify-content: center;
 }
 
-.form-submit input.btn-login{
+.form-submit input.login{
     cursor: pointer;
 }
 
@@ -72,7 +72,7 @@ button{
     position: relative;
 }
 
-.orther .btn-res{
+.orther .resgiter{
     position: absolute;
     right: 0;
     bottom: 12px;
@@ -85,5 +85,17 @@ button{
 .eye{
     position: absolute;
     right: 34px;
+}
+
+.form-group i{
+    padding-top: 11px;
+}
+
+.form-group input{
+    padding: 14px 0px 0px 10px;
+}
+
+p.error{
+    color: red;
 }
 /* Form giỏ hàng */
