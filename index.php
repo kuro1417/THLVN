@@ -1,14 +1,13 @@
 <?php
+    ob_start();
     require('Config.php');
-
+    session_start();
     if(isset($_POST['btn-login'])){
         $error = array();
         if(isset($_POST['username'])){
             $userName = $_POST['username'];
         }
             
-        
-
         if(isset($_POST['password'])){
             $password = $_POST['password'];
         }
@@ -19,6 +18,15 @@
         $numLog = mysqli_num_rows($resultLog);
 
         if($numLog > 0){
+                $accInfo = "SELECT * FROM `account` WHERE username = '".$userName."' ";
+                $resultInfor = mysqli_query(Connect(), $accInfo);
+                if($rowInfor = mysqli_fetch_array($resultInfor)){
+                    $_SESSION['idTk'] = $rowInfor['idTk'];
+                    $_SESSION['username'] = $rowInfor['username'];
+                    $_SESSION['password'] = $rowInfor['password'];
+                    $_SESSION['email'] = $rowInfor['email'];
+                }
+            $_SESSION ['is_login'] = true ;
             header("location: TrangChu.php");
         }else if(empty($_POST['username'])){
             $error['username'] = "Vui lòng không để trống tên đăng nhập";
@@ -51,12 +59,12 @@
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" class="form-input" name="username" id="UserName" placeholder="Tài khoản" autocomplete="off">
+                <input type="text" class="form-input" name="username" id="UserName" value="<?php if(!empty($userName)) echo $userName; ?>" placeholder="Tài khoản" autocomplete="off">
             </div>
             <p class="error"> <?php if(!empty($error['username'])) echo $error['username'] ?></p>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" class="form-input" name="password" id="PassWord" placeholder="Mật Khẩu">
+                <input type="password" class="form-input" name="password" id="PassWord" value="<?php if(!empty($password)) echo $password; ?>" placeholder="Mật Khẩu">
                 <div class="eye">
                     <i class="fa-solid fa-eye toggle"></i>
                 </div>
@@ -68,7 +76,7 @@
                 <input type="submit" class="login" name="btn-login" value="Đăng Nhập">
             </div>
             <div class="orther">
-                <button class="register"><a href="DangKy.php">Đăng kí</a></button>
+                <button class="register"><a href="DangKy.php">Đăng ký</a></button>
             </div>
         </form>
     </div>

@@ -59,6 +59,8 @@ a{
 
 .form-submit input.login{
     cursor: pointer;
+    width: 145px;
+    height: 50px;
 }
 
 button{

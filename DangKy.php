@@ -6,34 +6,47 @@ if (isset($_POST['btn-res'])) {
     if (isset($_POST['username'])) {
         $userName = $_POST['username'];
     }
+
     if (isset($_POST['password'])) {
         $password = $_POST['password'];
     }
+        
 
     if (isset($_POST['rePassword'])) {
         $rePass = $_POST['rePassword'];
-    } else {
-        $error['emtyRepass'] = "Vui lòng không để trống nhập lại mật khẩu";
     }
 
     if (isset($_POST['gmail'])) {
         $gmail = $_POST['gmail'];
-    } else {
-        $error['emtyMail'] = "Vui lòng không để trống Email";
     }
 
     if (empty($_POST['username'])) {
         $error['username'] = "Vui lòng không để trống tên đăng nhập";
-    } else if (empty($_POST['password'])) {
+    }else if(!(strlen($userName)>=3 && strlen($userName)<=12)){
+        //kiểm tra độ dài tài khoản
+        $error['username'] = 'Tài khoản phải có độ dài 3 - 12 kí tự';
+    }
+    else if (empty($_POST['password'])) {
         $error['password'] = "Vui lòng không để trống mật khẩu";
-    } else {
+    }else if(!(strlen($password)>=6 && strlen($password)<=32)){
+        //kiểm tra độ dài mật khẩu
+        $error['password'] = 'Mật khẩu phải có độ dài 6 - 32 kí tự';
+    }
+    else if(empty($_POST['rePassword'])){
+        $error['repass'] = "Vui lòng không để trống nhập lại mật khẩu";
+    }
+    else if(empty($_POST['gmail'])) {
+        $error['mail'] = "Vui lòng không để trống Email";
+    }
+    else
+    {
         if ($rePass == $password) {
             //kiểm tra tài khoản
             $checkAcc = "SELECT * FROM `account` WHERE username = '" . $userName . "' ";
             $resultAcc = mysqli_query(connect(), $checkAcc);
             $numAcc = mysqli_num_rows($resultAcc);
             if ($numAcc > 0) {
-                $error['account'] = "Tên Đăng Nhập đã tồn tại";
+                $error['username'] = "Tên Đăng Nhập đã tồn tại";
             } else {
                 //check mail
                 $checkMail = "SELECT * FROM `account` WHERE email = '" . $gmail . "' ";
@@ -76,36 +89,31 @@ mysqli_close(connect());
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" class="form-input" name="username" id="UserName" placeholder="Nhập tài khoản"
+                <input type="text" class="form-input" name="username" id="UserName" value="<?php echo set_value('userName') ?>" placeholder="Nhập tài khoản"
                     autocomplete="off">
             </div>
-            <p class="error"> <?php if (!empty($error['username'])) echo $error['username']; ?> </p>
-            <p class="error"> <?php if (!empty($error['account'])) echo $error['account']; ?> </p>
+            <?php echo form_error('username') ?>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" data-toggle="tooltip" title="Mật khẩu phải dài hơn 6 kí tự" class="form-input"
-                    name="password" id="PassWord" placeholder="Nhập mật Khẩu">
+                <input type="password" data-toggle="tooltip" title="Mật khẩu phải dài hơn 6 kí tự" class="form-input" name="password" id="PassWord" value="<?php echo set_value('password') ?>" placeholder="Nhập mật Khẩu">
                 <div class="eye">
                     <i class="fa-solid fa-eye toggle"></i>
                 </div>
             </div>
-            <p class="error"> <?php if (!empty($error['password'])) echo $error['password'] ?> </p>
+            <?php echo form_error('password') ?>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" class="form-input" name="rePassword" id="rePassword"
-                    placeholder="Nhập lại mật Khẩu">
+                <input type="password" class="form-input" name="rePassword" id="rePassword" value="<?php echo set_value('rePass') ?>" placeholder="Nhập lại mật Khẩu">
                 <div class="eye">
                     <i class="fa-solid fa-eye toggle"></i>
                 </div>
             </div>
-            <p class="error"> <?php if (!empty($error['repass'])) echo $error['repass'] ?> </p>
-            <p class="error"> <?php if (!empty($error['emtyRepass'])) echo $error['emtyRepass'] ?> </p>
+            <?php echo form_error('repass') ?>
             <div class="form-group">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="gmail" class="form-input" name="gmail" id="gmail" placeholder="Nhập gmail" autocomplete="off">
+                <input type="gmail" class="form-input" name="gmail" id="gmail" value="<?php echo set_value('gmail') ?>" placeholder="Nhập gmail" autocomplete="off">
             </div>
-            <p class="error"> <?php if (!empty($error['mail'])) echo $error['mail'] ?> </p>
-            <p class="error"> <?php if (!empty($error['emtyMail'])) echo $error['emtyMail'] ?> </p>
+            <?php echo form_error('mail') ?>
             <div class="orther">
                 <input type="submit" class="resgiter"  name="btn-res" value="Đăng ký"></input>
                 <button class="out"><a href="index.php">Đăng nhập </a> </button>
