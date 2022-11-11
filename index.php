@@ -1,6 +1,6 @@
 <?php
     ob_start();
-    require('Config.php');
+    require('PHP-function/Config.php');
     session_start();
     if(isset($_POST['btn-login'])){
         $error = array();
@@ -54,7 +54,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/L&R.css">
+    <link rel="stylesheet" href="./public/css/L&R.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="./js/jquery-3.6.1.js"></script>
     <title>Login</title>

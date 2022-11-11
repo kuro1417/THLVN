@@ -1,4 +1,5 @@
-<?php 
+<?php
+    ob_start(); 
     require('witget/header.php');
 ?>
         <div class="wp-content">
