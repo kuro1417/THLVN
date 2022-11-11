@@ -17,4 +17,9 @@
         global $$lableField;
         if(!empty($$lableField)) return $$lableField;
     }
+
+    function get_data_cookie($cookie_data){
+        if(!empty($_COOKIE[$cookie_data]))
+        return $_COOKIE[$cookie_data];
+    }
 ?>

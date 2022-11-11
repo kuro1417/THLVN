@@ -30,6 +30,7 @@
                                 </a>
                                     <a href=""><i class="fa-solid fa-house icon-home"></i> Trang Chủ</a>
                                     <a href=""><i class="fa-solid fa-phone"></i> Liên hệ</a>
+                                    <a href=""><i class="fa-solid fa-gamepad"></i> Libary</a>
                             </div>
                         </div>
 

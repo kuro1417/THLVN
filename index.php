@@ -26,8 +26,17 @@
                     $_SESSION['password'] = $rowInfor['password'];
                     $_SESSION['email'] = $rowInfor['email'];
                 }
+                if(isset($_POST['remember_me'])){
+                    setcookie('username',$userName,time() + 3600);
+                    setcookie('password',$password,time() + 3600);
+                    setcookie('user_login',$_POST['remember_me'],time() + 3600);
+                }else{
+                    setcookie('username',$userName,time() - 3600);
+                    setcookie('password',$password,time() - 3600);
+                    setcookie('is_login',$_POST['remember_me'],time() - 3600);
+                }
             $_SESSION ['is_login'] = true ;
-            header("location: TrangChu.php");
+            header("location: home_page.php");
         }else if(empty($_POST['username'])){
             $error['username'] = "Vui lòng không để trống tên đăng nhập";
         }else if(empty($_POST['password'])){
@@ -59,24 +68,24 @@
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" class="form-input" name="username" id="UserName" value="<?php if(!empty($userName)) echo $userName; ?>" placeholder="Tài khoản" autocomplete="off">
+                <input type="text" class="form-input" name="username" id="UserName" value="<?php if(!empty($userName)) echo $userName; echo get_data_cookie('username')?>" placeholder="Tài khoản" autocomplete="off">
             </div>
             <p class="error"> <?php if(!empty($error['username'])) echo $error['username'] ?></p>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" class="form-input" name="password" id="PassWord" value="<?php if(!empty($password)) echo $password; ?>" placeholder="Mật Khẩu">
+                <input type="password" class="form-input" name="password" id="PassWord" value="<?php if(!empty($password)) echo $password; echo get_data_cookie('password')?>" placeholder="Mật Khẩu">
                 <div class="eye">
                     <i class="fa-solid fa-eye toggle"></i>
                 </div>
             </div>
             <p class="error"> <?php if(!empty($error['password'])) echo $error['password'] ?></p>
-            <input type="checkbox">Nhớ mật Khẩu
+            <input type="checkbox" name="remember_me" id="remember"><label for="remember">Ghi nhớ mật khẩu</label>
             <p class="error"> <?php if(!empty($error['login'])) echo $error['login'] ?></p>
             <div class="form-submit">
                 <input type="submit" class="login" name="btn-login" value="Đăng Nhập">
             </div>
             <div class="orther">
-                <button class="register"><a href="DangKy.php">Đăng ký</a></button>
+                <button class="register"><a href="resgiter.php">Đăng ký</a></button>
             </div>
         </form>
     </div>
