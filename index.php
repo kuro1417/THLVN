@@ -36,7 +36,7 @@
                     setcookie('is_login',$_POST['remember_me'],time() - 3600);
                 }
             $_SESSION ['is_login'] = true ;
-            header("location: home_page.php");
+            header("location: main.php");
         }else if(empty($_POST['username'])){
             $error['username'] = "Vui lòng không để trống tên đăng nhập";
         }else if(empty($_POST['password'])){
