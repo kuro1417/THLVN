@@ -1,5 +1,5 @@
 <?php
-require('Config.php');
+require('PHP-function/Config.php');
 if (isset($_POST['btn-res'])) {
     $error = array();
 
@@ -76,8 +76,8 @@ mysqli_close(connect());
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="css/L&R.css">
-    <script src="./js/jquery-3.6.1.js"></script>
+    <link rel="stylesheet" href="public/css/L&R.css">
+    <script src="./public/js/jquery-3.6.1.js"></script>
     <title>resgiter</title>
 </head>
 
@@ -85,7 +85,7 @@ mysqli_close(connect());
     <div class="wrapper">
         <form action="" method="post" class="form-login">
             <div class="logo">
-                <img src="image/logo.png" alt="">
+                <img src="./public/image/logo.png" alt="">
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
