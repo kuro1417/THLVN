@@ -1,5 +1,4 @@
 <?php
-require('PHP-function/Config.php');
 if (isset($_POST['btn-res'])) {
     $error = array();
 
@@ -20,6 +19,15 @@ if (isset($_POST['btn-res'])) {
         $gmail = $_POST['gmail'];
     }
 
+    function is_gmail($gmail){
+        $patter = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/'; 
+        if(!preg_match($patter,$gmail,$matchs)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     if (empty($_POST['username'])) {
         $error['username'] = "Vui lòng không để trống tên đăng nhập";
     }else if(!(strlen($userName)>=3 && strlen($userName)<=12)){
@@ -38,6 +46,9 @@ if (isset($_POST['btn-res'])) {
     else if(empty($_POST['gmail'])) {
         $error['mail'] = "Vui lòng không để trống Email";
     }
+    else if(!is_gmail($_POST['gmail'])){
+        $error['mail'] = "Email không đúng định dạng";
+    }
     else
     {
         if ($rePass == $password) {
@@ -55,9 +66,10 @@ if (isset($_POST['btn-res'])) {
                 if (!$numMail > 0) {
                     $insert = "INSERT INTO `account`(`idTK`, `username`, `password`, `email`) VALUES ('','" . $userName . "','" . $password . "','" . $gmail . "')";
                     if (mysqli_query(connect(), $insert)) {
-                        header("location: index.php");
+                        redirect('?page=login');
                     }
-                } else {
+                }
+                else {
                     $error['mail'] = "Email này đã được sử dụng";
                 }
             }

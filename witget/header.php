@@ -1,9 +1,3 @@
-<?php 
-    session_start();
-    if(!isset($_SESSION['is_login'])){
-        header("Location: /THLVN/index.php");
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +32,7 @@
                         <div class="Head-right">
                             <div class="all">
                                 <i class="fa-solid fa-user"></i> <a href="?page=Profile" class="profile"><?php echo $_SESSION['username'] ?></a>
-                                <i class="fa-solid fa-right-from-bracket"></i> <a href="/THLVN/PHP-function/logout.php" class="logout">Sign out</a>
+                                <i class="fa-solid fa-right-from-bracket"></i> <a href="?page=logout" class="logout">Sign out</a>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,6 @@
-
+<?php 
+    get_header();
+?>
         <div class="wp-content">
             <div class="container">
                 <div class="row text-white">
@@ -41,3 +43,7 @@
                             </div>
                         </div>
                     </div>
+        </div>
+<?php 
+    get_footer();
+?>

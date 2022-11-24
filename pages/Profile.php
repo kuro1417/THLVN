@@ -1,4 +1,6 @@
-
+<?php 
+    get_header();
+?>
 <div class="wp-content">
     <div class="container">
         <div class="row text-white">
@@ -7,7 +9,7 @@
                     <input class="search" type="text" name="" id="" placeholder="Search">
                 </form>
                 <div class="cart ml-auto mt-3">
-                    <button class="btn btn-success"><a href="" class="text-white text-decoration-none"><i
+                    <button class="btn btn-success"><a href="?page=cart" class="text-white text-decoration-none"><i
                                 class="fa-solid fa-cart-shopping"></i>Giỏ Hàng</a></button>
                 </div>
             </div>
@@ -34,7 +36,7 @@
                         <input type="password" name="old_password" id="old_pass"><br>
                         <label for="new_pass">Mật khẩu mới</label><br>
                         <input type="password" name="new_password" id="new_pass"><br>
-                        <label for="re_new_pass">Mật khẩu hiện tại</label><br>
+                        <label for="re_new_pass">Nhập lại Mật khẩu mới</label><br>
                         <input type="password" name="re_new_password" id="re_new_pass"><br><br>
                         <input type="submit" name="btn-change" class="btn btn-success" value="xác nhận"><br>
                     </form>
@@ -51,3 +53,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+
+<?php 
+    get_footer();
+?>
