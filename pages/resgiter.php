@@ -107,7 +107,7 @@ mysqli_close(connect());
             <?php echo form_error('username') ?>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" data-toggle="tooltip" title="Mật khẩu phải dài hơn 6 kí tự" class="form-input" name="password" id="PassWord" value="<?php echo set_value('password') ?>" placeholder="Nhập mật Khẩu">
+                <input type="password" class="form-input" name="password" id="PassWord" value="<?php echo set_value('password') ?>" placeholder="Nhập mật Khẩu">
                 <div class="eye">
                     <i class="fa-solid fa-eye toggle"></i>
                 </div>
@@ -149,12 +149,6 @@ mysqli_close(connect());
                     input.setAttribute("type", "password");
                 }
             }))
-
-            $('[data-toggle="tooltip"]').tooltip({
-                placement: 'bottom',
-                trigger: 'hover,forcus',
-                html: true,
-            });
         });
     </script>
 </body>
