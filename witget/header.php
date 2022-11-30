@@ -23,16 +23,16 @@
                                 <a href="">
                                     <img src="./public/image/logo.png" style="width: 70px;" alt="">
                                 </a>
-                                    <a href="?page=home_page"><i class="fa-solid fa-house icon-home"></i> Trang Chủ</a>
+                                    <a href="?"><i class="fa-solid fa-house icon-home"></i> Trang Chủ</a>
                                     <a href=""><i class="fa-solid fa-phone"></i> Liên hệ</a>
-                                    <a href="?page=Libary"><i class="fa-solid fa-gamepad"></i> Libary</a>
+                                    <a href="?mod=Libary&act=main&id=<?php echo $_SESSION['idTK'] ?>"><i class="fa-solid fa-gamepad"></i> Libary</a>
                             </div>
                         </div>
 
                         <div class="Head-right">
                             <div class="all">
-                                <i class="fa-solid fa-user"></i> <a href="?page=Profile" class="profile"><?php echo $_SESSION['username'] ?></a>
-                                <i class="fa-solid fa-right-from-bracket"></i> <a href="?page=logout" class="logout">Sign out</a>
+                                <i class="fa-solid fa-user"></i> <a href="?mod=profile&act=main" class="profile"><?php echo $_SESSION['username'] ?></a>
+                                <i class="fa-solid fa-right-from-bracket"></i> <a href="?mod=logout&act=main" class="logout">Sign out</a>
                             </div>
                         </div>
                     </div>

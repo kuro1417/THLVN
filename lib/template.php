@@ -7,6 +7,13 @@
         require 'witget/footer.php';
     }
 
+    function get_sidebar(){
+        require 'witget/sidebar.php';
+    }
+
+    function get_slider(){
+        require 'witget/slider.php';
+    }
     function show_array($data){
         if(is_array($data)){
             echo "<pre>";
