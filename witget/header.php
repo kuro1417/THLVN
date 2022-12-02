@@ -23,7 +23,7 @@
                                 <a href="">
                                     <img src="./public/image/logo.png" style="width: 70px;" alt="">
                                 </a>
-                                    <a href="?"><i class="fa-solid fa-house icon-home"></i> Trang Chủ</a>
+                                    <a href="?mod=home&act=main"><i class="fa-solid fa-house icon-home"></i> Trang Chủ</a>
                                     <a href=""><i class="fa-solid fa-phone"></i> Liên hệ</a>
                                     <a href="?mod=Libary&act=main&id=<?php echo $_SESSION['idTK'] ?>"><i class="fa-solid fa-gamepad"></i> Libary</a>
                             </div>

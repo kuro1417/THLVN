@@ -5,6 +5,7 @@
     require('lib/template.php');
     require('lib/Config.php');
     require('lib/url.php');
+    //Data
 ?>
 <?php
     //Kiểm tra ghi nhớ đăng nhập
