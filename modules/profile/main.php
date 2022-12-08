@@ -12,7 +12,7 @@
                     <input class="search" type="text" name="" id="" placeholder="Search">
                 </form>
                 <div class="cart ml-auto mt-3">
-                    <button class="btn btn-success"><a href="?mod=cart&act=show_cart&id=<?php echo $_SESSION['idTK'] ?>" class="text-white text-decoration-none"><i
+                    <button class="btn btn-success"><a href="?mod=cart&act=show_cart&idTK=<?php echo $_SESSION['idTK'] ?>" class="text-white text-decoration-none"><i
                                 class="fa-solid fa-cart-shopping"></i>Giỏ Hàng</a></button>
                 </div>
             </div>

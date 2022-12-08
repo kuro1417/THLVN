@@ -1,5 +1,9 @@
 <?php 
     get_header();
+    $idTK = $_GET['idTK'];
+    
+    $sql_show_cart = "SELECT * FROM `product` JOIN  `cart` on `cart`.`idSP` = `product`.`idSP` WHERE `cart`.idTK = $idTK";
+    $query_show = mysqli_query(Connect(), $sql_show_cart);
 ?>
 <div class="wp-content">
     <div class="container">
@@ -8,12 +12,18 @@
             <h2>Giỏ hàng của tôi</h2>
             </div>
             <div class="content col-md-8">
-                <div class="cart-items d-flex">
-                    <a href="?mod=product&act=detail&id=8"><img class="cart-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/588650/capsule_616x353.jpg?t=1658329626" alt=""></a>
-                    <div class="name-item"><a href="">Dead cell</a></div>
-                    <div class="price-item">250 <strong>usd</strong></div>
+                <?php
+                while ($row_show = mysqli_fetch_array($query_show)) {
+                ?>
+                <div class="cart-items d-flex mb-3">
+                    <a href="?mod=product&act=detail&id=<?php echo $row_show['idSP'] ?>"><img class="cart-img" src="<?php echo $row_show['img'] ?>" alt=""></a>
+                    <div class="name-item"><a href="?mod=product&act=detail&id=<?php echo $row_show['idSP'] ?>"><?php echo $row_show['tenSP'] ?></a></div>
+                    <div class="price-item"><?php echo $row_show['price'] ?> <strong>usd</strong></div>
                     <div class="remove-item"><a href="">remove</a></div>
                 </div>
+                <?php
+                }
+                ?>
             </div>
             <div class="sidebar col-md-4">
                 <div class="form-cart-right">
