@@ -1,5 +1,5 @@
 .wp-content{
-    min-height: 600px;
+    min-height: 800px;
 }
 .header,.footer{
     background-color: black;
@@ -102,4 +102,15 @@ body{
 .total{
     padding:25px 0;
     border-top:1px solid white;
+}
+
+/* end Cart */
+/* Chi tiết giỏ hàng */
+.buy-add-btn button {
+    color: white;
+    margin-bottom: 12px;
+}
+
+.buy-add-btn a {
+    text-decoration: none;
 }

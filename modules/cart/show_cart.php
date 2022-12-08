@@ -9,7 +9,7 @@
             </div>
             <div class="content col-md-8">
                 <div class="cart-items d-flex">
-                    <img class="cart-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/588650/capsule_616x353.jpg?t=1658329626"  alt="">
+                    <a href="?mod=product&act=detail&id=8"><img class="cart-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/588650/capsule_616x353.jpg?t=1658329626" alt=""></a>
                     <div class="name-item"><a href="">Dead cell</a></div>
                     <div class="price-item">250 <strong>usd</strong></div>
                     <div class="remove-item"><a href="">remove</a></div>
