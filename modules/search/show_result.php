@@ -1,8 +1,10 @@
 <?php 
     get_header();
-    # Lấy các sản phẩm
-    $sql_pro = "SELECT `idSP`,`img` FROM `product` ";
-    $query_pro = mysqli_query(Connect(),$sql_pro);
+    if(isset($_POST['btn_search'])){
+        $keyWord = $_POST['key_word'];
+    }
+    $item = "SELECT * from `product` WHERE `tenSP` LIKE '%".$keyWord."%' ";
+    $item_query = mysqli_query(Connect(), $item);
 ?>
 <style>
     img.thumb{
@@ -23,14 +25,12 @@
                         </div>
                 </div>
                     <div class="content col-md-9">
-                        <!-- end search -->
-                            <?php get_slider() ?>
-                        <h5 class="section-header my-3">Game hay</h5>
+                        <h5 class="section-header my-3"><?php echo $keyWord ?></h5>
                         <div class="game-section">
                             <div class="row">
-                                <?php while ($row_pro = mysqli_fetch_array($query_pro)) { ?> 
+                                <?php while ($row_items = mysqli_fetch_array($item_query)) { ?> 
                                 <div class="col-md-4">
-                                    <a href="?mod=product&act=detail&id=<?php echo $row_pro['idSP'] ?>"> <img class="img-thumbnail thumb" src="<?php echo $row_pro['img'] ?>"></a>
+                                    <a href="?mod=product&act=detail&id=<?php echo $row_items['idSP'] ?>"> <img class="img-thumbnail thumb" src="<?php echo $row_items['img'] ?>"></a>
                                 </div>
                                 <?php } ?>
                             </div>
@@ -43,20 +43,6 @@
         </div>
     </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function () {
-            $('#home-slide').carousel({
-                interval: 2000,
-                ride: "carousel"
-            })
-        })
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
 <?php 
     get_footer();
 ?>

@@ -1,22 +1,15 @@
 <?php 
     get_header();
 ?>
-<?php
-    
-?>
 <div class="wp-content">
-    <div class="container">
+    <div class="container" style="min-height:506px">
         <div class="row text-white">
             <div class="col-md-12 d-flex">
                 <form action="" class="form-search my-3">
                     <input class="search" type="text" name="" id="" placeholder="Search">
                 </form>
-                <div class="cart ml-auto mt-3">
-                    <button class="btn btn-success"><a href="?mod=cart&act=show_cart&idTK=<?php echo $_SESSION['idTK'] ?>" class="text-white text-decoration-none"><i
-                                class="fa-solid fa-cart-shopping"></i>Giỏ Hàng</a></button>
-                </div>
             </div>
-            <div class="content col-md-10">
+            <div class="content col-md-6">
                 <div class="profile">
                     <h3>Hồ Sơ cá Nhân</h3>
                     <p>Tên Đăng nhập</p>
@@ -32,6 +25,9 @@
                         </p>
                     </div>
                 </div>
+                
+            </div>
+            <div class=col-md-6>
                 <div class="change-pass">
                     <h3>Đổi mật khẩu</h3>
                     <form action="" method="post">
@@ -45,7 +41,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 

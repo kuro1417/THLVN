@@ -28,6 +28,7 @@
         redirect('?mod=login&act=main');
     }
 
+    
     if(file_exists($path)){
         require $path;
     }else{

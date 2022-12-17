@@ -14,6 +14,11 @@
     function get_slider(){
         require 'witget/slider.php';
     }
+
+    function get_search(){
+        require 'witget/search_form.php';
+    }
+
     function show_array($data){
         if(is_array($data)){
             echo "<pre>";

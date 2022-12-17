@@ -8,5 +8,5 @@
 
     $sql_add_cart = "INSERT INTO `cart`(`idCart`, `idTK`, `idSP`, `total`) VALUES ('','$idTK','$idSP','$price[price]')";
     $sql_add_cart_query = mysqli_query(Connect(), $sql_add_cart);
-    redirect("?mod=cart&act=show_cart&idTK=$idTK")
+    redirect("?mod=product&act=detail&id=$idSP")
 ?>

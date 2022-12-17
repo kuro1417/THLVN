@@ -13,13 +13,15 @@
             </div>
             <div class="content col-md-8">
                 <?php
+                    $total = 0;
                 while ($row_show = mysqli_fetch_array($query_show)) {
+                    $total = $total + $row_show['price']
                 ?>
                 <div class="cart-items d-flex mb-3">
                     <a href="?mod=product&act=detail&id=<?php echo $row_show['idSP'] ?>"><img class="cart-img" src="<?php echo $row_show['img'] ?>" alt=""></a>
                     <div class="name-item"><a href="?mod=product&act=detail&id=<?php echo $row_show['idSP'] ?>"><?php echo $row_show['tenSP'] ?></a></div>
                     <div class="price-item"><?php echo $row_show['price'] ?> <strong>usd</strong></div>
-                    <div class="remove-item"><a href="">remove</a></div>
+                    <div class="remove-item"><a href="?mod=cart&act=delete_cart&idSP=<?php echo $row_show['idSP']?>&idTK=<?php echo $idTK ?>">remove</a></div>
                 </div>
                 <?php
                 }
@@ -27,11 +29,10 @@
             </div>
             <div class="sidebar col-md-4">
                 <div class="form-cart-right">
-                        <h2>Games and Apps Summary</h2>
+                        <h3>Games and Apps Summary</h3>
                         <div class="form-cart-top">
-                            <div class="price d-flex"><span>giá tiền:</span><p class="ml-auto">250</p></div>
                             <div><span>Taxes Calculated at Checkout</span></div>    
-                            <div class="total d-flex"><span>Tổng tiền:</span><p class="ml-auto">250</p></div>
+                            <div class="total d-flex"><span>Tổng tiền:</span><p class="ml-auto"><?php echo $total ?> USD</p></div>
                         </div>
                         <button class="btn btn-primary btn-block">Thanh Toán</button>
                 </div>

@@ -28,8 +28,14 @@
                     setcookie('is_lg',true,time() + 3600);
                     setcookie('user_login',$userName,time() + 3600);
                 }
-            redirect('?mod=home&act=main');
-        }else if(empty($_POST['username'])){
+
+                if( $_SESSION['idTK'] == 0){
+                    redirect('?mod=admin&act=main');
+                }else{
+                    redirect('?mod=home&act=main');
+                }
+        }
+        else if(empty($_POST['username'])){
             $error['username'] = "Vui lòng không để trống tên đăng nhập";
         }else if(empty($_POST['password'])){
             $error['password'] = "Vui lòng không để trống mật khẩu";
